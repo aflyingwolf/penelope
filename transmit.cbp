@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="transmit" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/transmit" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+				<Linker>
+					<Add option="-lpthread" />
+					<Add option="/usr/local/lib/libev.a" />
+					<Add option="/usr/local/lib/liblog4c.a" />
+					<Add option="/usr/local/lib/libhiredis.a" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/transmit" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add option="-lpthread" />
+					<Add option="/usr/local/lib/libev.a" />
+					<Add option="/usr/local/lib/liblog4c.a" />
+					<Add option="/usr/local/lib/libhiredis.a" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Unit filename="base64.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="base64.h" />
+		<Unit filename="client_function.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="client_function.h" />
+		<Unit filename="configs.h" />
+		<Unit filename="conn_queue.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="conn_queue.h" />
+		<Unit filename="fd.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="fd.h" />
+		<Unit filename="intlib.h" />
+		<Unit filename="log4c_pu.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="log4c_pu.h" />
+		<Unit filename="log4crc" />
+		<Unit filename="main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main.h" />
+		<Unit filename="redis_pu.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="redis_pu.h" />
+		<Unit filename="room_state.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="room_state.h" />
+		<Unit filename="sha1.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="sha1.h" />
+		<Unit filename="user_state.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="user_state.h" />
+		<Unit filename="web_socket.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="web_socket.h" />
+		<Extensions>
+			<envvars />
+			<code_completion />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

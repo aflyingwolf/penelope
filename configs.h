@@ -1,0 +1,7 @@
+#ifndef CONFIGS_H_INCLUDED
+#define CONFIGS_H_INCLUDED
+
+#define REDIS_IP        "192.168.48.152"
+#define REDIS_PORT      6381
+
+#endif // CONFIGS_H_INCLUDED

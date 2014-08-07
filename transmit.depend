@@ -1,0 +1,134 @@
+# depslib dependency file v1.0
+1403237239 source:/home/jishipu/linux-c/transmit/client_function.c
+	<stdlib.h>
+	<stdio.h>
+	<errno.h>
+	<sys/types.h>
+	<sys/stat.h>
+	<netinet/in.h>
+	<arpa/inet.h>
+	<sys/socket.h>
+	<string.h>
+	<pthread.h>
+	<unistd.h>
+	<ev.h>
+	"log4c_pu.h"
+	"fd.h"
+	"main.h"
+	"user_state.h"
+	"room_state.h"
+	"web_socket.h"
+	"redis_pu.h"
+	"client_function.h"
+
+1402915559 /home/jishipu/linux-c/transmit/log4c_pu.h
+	<string.h>
+	<stdlib.h>
+	"log4c.h"
+
+1403161704 /home/jishipu/linux-c/transmit/fd.h
+
+1403181629 /home/jishipu/linux-c/transmit/main.h
+
+1403093317 /home/jishipu/linux-c/transmit/user_state.h
+
+1403265957 /home/jishipu/linux-c/transmit/client_function.h
+
+1403173164 source:/home/jishipu/linux-c/transmit/conn_queue.c
+	<stdlib.h>
+	<pthread.h>
+	"conn_queue.h"
+
+1402900290 /home/jishipu/linux-c/transmit/conn_queue.h
+
+1403164406 source:/home/jishipu/linux-c/transmit/fd.c
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+	<pthread.h>
+	"fd.h"
+
+1403001380 source:/home/jishipu/linux-c/transmit/log4c_pu.c
+	"log4c_pu.h"
+
+1403164406 source:/home/jishipu/linux-c/transmit/main.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	<pthread.h>
+	<ev.h>
+	<arpa/inet.h>
+	"conn_queue.h"
+	"fd.h"
+	"log4c_pu.h"
+	"client_function.h"
+	"user_state.h"
+	"room_state.h"
+	"main.h"
+
+1403165819 source:/home/jishipu/linux-c/transmit/room_state.c
+	<stdio.h>
+	<stdlib.h>
+	<malloc.h>
+	<assert.h>
+	<string.h>
+	<pthread.h>
+	"room_state.h"
+	"fd.h"
+
+1403164406 source:/home/jishipu/linux-c/transmit/user_state.c
+	<stdio.h>
+	<stdlib.h>
+	<malloc.h>
+	<assert.h>
+	<string.h>
+	<pthread.h>
+	"fd.h"
+	"user_state.h"
+
+1403149569 source:/home/jishipu/linux-c/transmit/base64.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"base64.h"
+
+1403236169 /home/jishipu/linux-c/transmit/base64.h
+
+1403093317 /home/jishipu/linux-c/transmit/room_state.h
+
+1403179170 /home/jishipu/linux-c/transmit/web_socket.h
+
+1403143758 source:/home/jishipu/linux-c/transmit/sha1.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"sha1.h"
+
+1403143762 /home/jishipu/linux-c/transmit/sha1.h
+
+1403237871 source:/home/jishipu/linux-c/transmit/web_socket.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<unistd.h>
+	<sys/socket.h>
+	<netinet/in.h>
+	"base64.h"
+	"sha1.h"
+	"intlib.h"
+	"web_socket.h"
+
+1403094347 /home/jishipu/linux-c/transmit/intlib.h
+
+1403173632 /home/jishipu/linux-c/transmit/redis_pu.h
+	<hiredis/hiredis.h>
+
+1403174114 source:/home/jishipu/linux-c/transmit/redis_pu.c
+	<stdio.h>
+	<stdlib.h>
+	<hiredis/hiredis.h>
+	"configs.h"
+	"redis_pu.h"
+
+1403172677 /home/jishipu/linux-c/transmit/configs.h
+
