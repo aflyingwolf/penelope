@@ -193,7 +193,7 @@ dispath_conn(int anewfd,struct sockaddr_in asin)
 
 int main()
 {
-    thread_init();
+        thread_init();
 
 	users = initialize_user_array(USER_HASH_SIZE);
         server = initialize_server();
