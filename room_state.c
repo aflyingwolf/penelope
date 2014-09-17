@@ -14,7 +14,7 @@ SERVER
 initialize_server()
 {
     unsigned int i;
- 	SERVER s;
+    SERVER s;
 
     s =( SERVER ) malloc(sizeof( SERVER ));
     if (s == NULL)
@@ -37,7 +37,7 @@ initialize_server()
     return s;
 }
 
-//Á´±íÏú»Ù
+//é“¾è¡¨é”€æ¯
 void
 destory_server( SERVER s )
 {
@@ -52,10 +52,10 @@ insert_into_room(int fd, int roomid, SERVER s )
 	R_ITEM *item;
 
 	item =(R_ITEM *) malloc(sizeof( R_ITEM ));
-    if ( item == NULL ){
-        printf("no memory\n");
-        return ;
-    }
+        if ( item == NULL ){
+            printf("no memory\n");
+            return ;
+        }
 
 	item->fd = fd;
 	item->next = NULL;
@@ -64,7 +64,7 @@ insert_into_room(int fd, int roomid, SERVER s )
 
 	if(NULL == s->the_rooms[roomid].last)
 	{
-		//·¿¼äÎª¿ÕÊ±µÄ´¦ÀíÂß¼­
+		//æˆ¿é—´ä¸ºç©ºæ—¶çš„å¤„ç†é€»è¾‘
 		s->the_rooms[roomid].first = item;
 	}
 	else
@@ -77,7 +77,7 @@ insert_into_room(int fd, int roomid, SERVER s )
 	pthread_mutex_unlock(&room_state_lock);
 }
 
-//µ±ÓÃ»§¶Ï¿ªÁ¬½Óºó£¬½«ÓÃ»§´ÓÁ´±íÖĞÉ¾³ıµô
+//å½“ç”¨æˆ·æ–­å¼€è¿æ¥åï¼Œå°†ç”¨æˆ·ä»é“¾è¡¨ä¸­åˆ é™¤æ‰
 void
 delete_from_room(int selffd, int roomid, SERVER s)
 {
@@ -86,8 +86,8 @@ delete_from_room(int selffd, int roomid, SERVER s)
 	R_ITEM *self = NULL;
 
 	pre = s->the_rooms[roomid].first;
-	//¼ì²éµÚÒ»¸ö½áµã
-	//Èç¹û·¿¼äÎª¿Õ£¬ÔòÖ±½Ó·µ»Ø
+	//æ£€æŸ¥ç¬¬ä¸€ä¸ªç»“ç‚¹
+	//å¦‚æœæˆ¿é—´ä¸ºç©ºï¼Œåˆ™ç›´æ¥è¿”å›
 	if(NULL == pre)
 	{
 		return;
@@ -97,7 +97,7 @@ delete_from_room(int selffd, int roomid, SERVER s)
 		pthread_mutex_lock(&room_state_lock);
 
 		s->the_rooms[roomid].first = pre->next;
-		//Èç¹ûÖ»ÓĞÒ»¸ö½áµã£¬ĞèÒªĞŞ¸ÄlastÖ¸Õë
+		//å¦‚æœåªæœ‰ä¸€ä¸ªç»“ç‚¹ï¼Œéœ€è¦ä¿®æ”¹lastæŒ‡é’ˆ
 		if(NULL == pre->next)
 		{
 			s->the_rooms[roomid].last = NULL;
@@ -110,7 +110,7 @@ delete_from_room(int selffd, int roomid, SERVER s)
 		pthread_mutex_unlock(&room_state_lock);
 		return;
 	}
-	//Èç¹ûÓĞ¶à¸ö½áµã£¬ÇÒµÚÒ»¸ö½áµã²»ÊÇÒªÕÒµÄ½áµã
+	//å¦‚æœæœ‰å¤šä¸ªç»“ç‚¹ï¼Œä¸”ç¬¬ä¸€ä¸ªç»“ç‚¹ä¸æ˜¯è¦æ‰¾çš„ç»“ç‚¹
 	self = pre->next;
 	while(NULL != self)
 	{
@@ -140,7 +140,7 @@ delete_from_room(int selffd, int roomid, SERVER s)
 	return;
 }
 
-//¸ù¾İ×Ô¼ºµÄ·¿¼ä±àºÅ£¬¶ÁÈ¡ÆäËûÊÒÓÑµÄsocket¾ä±ú
+//æ ¹æ®è‡ªå·±çš„æˆ¿é—´ç¼–å·ï¼Œè¯»å–å…¶ä»–å®¤å‹çš„socketå¥æŸ„
 int
 get_roommate_fd(int roomid, int selffd, int **afd, SERVER s)
 {
