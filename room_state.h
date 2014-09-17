@@ -10,7 +10,7 @@ struct hash_player{
 struct hash_room{
 	R_ITEM	*first;
 	R_ITEM	*last;
-	int		current_count;
+	int	current_count;
 };
 
 typedef struct hash_room ROOM;
