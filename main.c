@@ -130,7 +130,7 @@ static void setup_thread(WORK_THREAD *me)
 
 void thread_init()
 {
-    dispatcher_thread.loop = ev_default_loop(0);
+        dispatcher_thread.loop = ev_default_loop(0);
 	dispatcher_thread.thread_id = pthread_self();
 
 	int nthreads = MAX_WORK_THREAD;
@@ -196,7 +196,7 @@ int main()
     thread_init();
 
 	users = initialize_user_array(USER_HASH_SIZE);
-    server = initialize_server();
+        server = initialize_server();
 
 	//日志记录器初始化
 	if(1 == log4c_pu_init())
@@ -213,6 +213,6 @@ int main()
 		printf ( "Log model exit\n" );
 
 	destory_server(server);
-    destory_user_array(users);
+        destory_user_array(users);
 	return 0;
 }
