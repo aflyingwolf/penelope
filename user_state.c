@@ -20,7 +20,7 @@ initialize_user_array(unsigned int array_size )
         return NULL;
 
     u->array_size = array_size;
-	u->user_count = 0;
+    u->user_count = 0;
 
     u->user_array = malloc(sizeof( USERS ) * (array_size ));
     if ( u->user_array == NULL ){
@@ -35,7 +35,7 @@ initialize_user_array(unsigned int array_size )
     return u;
 }
 
-//Á´±íÏú»Ù
+//é“¾è¡¨é”€æ¯
 void
 destory_user_array( USER_ARRAY u )
 {
@@ -66,7 +66,7 @@ void insert_user(int logid, int fd, int roomid, USER_ARRAY u)
 
 	if(NULL == u->user_array[slot].last)
 	{
-		//·¿¼äÎª¿ÕÊ±µÄ´¦ÀíÂß¼­
+		//æˆ¿é—´ä¸ºç©ºæ—¶çš„å¤„ç†é€»è¾‘
 		u->user_array[slot].first = item;
 	}
 	else
@@ -81,7 +81,7 @@ void insert_user(int logid, int fd, int roomid, USER_ARRAY u)
 	return ;
 }
 
-//µ±ÓÃ»§¶Ï¿ªÁ¬½Óºó£¬½«ÓÃ»§´ÓÁ´±íÖÐÉ¾³ýµô
+//å½“ç”¨æˆ·æ–­å¼€è¿žæŽ¥åŽï¼Œå°†ç”¨æˆ·ä»Žé“¾è¡¨ä¸­åˆ é™¤æŽ‰
 void
 delete_user(int logid, USER_ARRAY u)
 {
@@ -92,8 +92,8 @@ delete_user(int logid, USER_ARRAY u)
 
 	slot = logid % u->array_size;
 	pre = u->user_array[slot].first;
-	//¼ì²éµÚÒ»¸ö½áµã
-	//Èç¹û·¿¼äÎª¿Õ£¬ÔòÖ±½Ó·µ»Ø
+	//æ£€æŸ¥ç¬¬ä¸€ä¸ªç»“ç‚¹
+	//å¦‚æžœæˆ¿é—´ä¸ºç©ºï¼Œåˆ™ç›´æŽ¥è¿”å›ž
 	if(NULL == pre)
 	{
 		return;
@@ -103,7 +103,7 @@ delete_user(int logid, USER_ARRAY u)
 		pthread_mutex_lock(&user_state_lock);
 
 		u->user_array[slot].first = pre->next;
-		//Èç¹ûÖ»ÓÐÒ»¸ö½áµã£¬ÐèÒªÐÞ¸ÄlastÖ¸Õë
+		//å¦‚æžœåªæœ‰ä¸€ä¸ªç»“ç‚¹ï¼Œéœ€è¦ä¿®æ”¹lastæŒ‡é’ˆ
 		if(NULL == pre->next)
 		{
 			u->user_array[slot].last = NULL;
@@ -115,7 +115,7 @@ delete_user(int logid, USER_ARRAY u)
 		pthread_mutex_unlock(&user_state_lock);
 		return;
 	}
-	//Èç¹ûÓÐ¶à¸ö½áµã£¬ÇÒµÚÒ»¸ö½áµã²»ÊÇÒªÕÒµÄ½áµã
+	//å¦‚æžœæœ‰å¤šä¸ªç»“ç‚¹ï¼Œä¸”ç¬¬ä¸€ä¸ªç»“ç‚¹ä¸æ˜¯è¦æ‰¾çš„ç»“ç‚¹
 	self = pre->next;
 	while(NULL != self)
 	{
