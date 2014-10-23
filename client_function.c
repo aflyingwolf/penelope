@@ -170,19 +170,13 @@ loop:
         }
     }
 
-    ev_io_stop(loop,  w);
-    ev_io_init(w,write_callback,fd,EV_WRITE);
-    ev_io_start(loop,w);
     printf("thread[%lu] socket fd : %d, turn to listen loop!\n",pthread_self(), fd);
 }
 
 void
 write_callback(struct ev_loop *loop, ev_io *w, int revents)
 {
-    int fd=w->fd;
-    ev_io_stop(loop,  w);
-    ev_io_init(w,recv_callback,fd,EV_READ);
-    ev_io_start(loop,w);
+
 }
 
 void
