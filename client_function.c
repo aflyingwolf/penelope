@@ -174,10 +174,7 @@ loop:
 }
 
 void
-write_callback(struct ev_loop *loop, ev_io *w, int revents)
-{
-
-}
+write_callback(struct ev_loop *loop, ev_io *w, int revents){}
 
 void
 init_connect ( int selffd )

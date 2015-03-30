@@ -18,7 +18,6 @@ void SHA1Reset(SHA1Context *context){// 初始化动作
     context->Corrupted  = 0;
 }
 
-
 int SHA1Result(SHA1Context *context){// 成功返回1，失败返回0
     if (context->Corrupted) {
         return 0;
@@ -29,7 +28,6 @@ int SHA1Result(SHA1Context *context){// 成功返回1，失败返回0
     }
     return 1;
 }
-
 
 void SHA1Input(SHA1Context *context,const char *message_array,unsigned length){
     if (!length) return;

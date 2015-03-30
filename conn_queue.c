@@ -20,7 +20,6 @@ void cq_init(CQ *cq) {
 CQ_ITEM *cq_pop(CQ *cq) {
 	CQ_ITEM *item;
 
-
 	pthread_mutex_lock(&cq->lock);
 	item = cq->head;
 	if (NULL != item) {
@@ -30,7 +29,6 @@ CQ_ITEM *cq_pop(CQ *cq) {
 	}
 	pthread_mutex_unlock(&cq->lock);
 
-
 	return item;
 }
 
@@ -39,7 +37,6 @@ CQ_ITEM *cq_pop(CQ *cq) {
  */
 void cq_push(CQ *cq, CQ_ITEM *item) {
 	item->next = NULL;
-
 
 	pthread_mutex_lock(&cq->lock);
 	if (NULL == cq->tail)
